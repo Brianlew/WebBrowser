@@ -57,7 +57,8 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlText.text]]];
+    NSString *urlString = [NSString stringWithFormat:@"http://%@", urlText.text];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     return YES;
 }
 
